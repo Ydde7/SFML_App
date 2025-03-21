@@ -10,7 +10,7 @@ using namespace std;
 int main() {
 	// Create the window	
 	RenderWindow mainWindow(VideoMode({ 800,600 }), "My First App");
-	
+
 	RectangleShape myRectangle({ 400.f, 200.f }); // Creates a rectangle shape
 
 	// The main loop:
@@ -35,18 +35,18 @@ int main() {
 		}
 
 		// Fixes the Color error with resizing 
-		mainWindow.clear(Color(225, 225, 225)); // Make sure your capitalization is right!
+		mainWindow.clear(Color(175, 175, 175)); // Make sure your capitalization is right!
 
 		// Shape Stuff:
 		myRectangle.setOrigin({ 200.f, 100.f }); // Sets the origin by realizing the centre is half the height and width
-
 		myRectangle.setFillColor(Color(127, 25, 123));
 		myRectangle.setOutlineThickness(15.f);
 		myRectangle.setPosition({ 400.f, 300.f });
 		myRectangle.setRotation(degrees(30.f));
-		
+	
 		// Draws to the window
 		mainWindow.draw(myRectangle);
+
 		mainWindow.display();
 
 	}
