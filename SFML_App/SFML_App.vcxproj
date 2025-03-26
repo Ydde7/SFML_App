@@ -134,7 +134,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Borders.cpp" />
     <ClCompile Include="SFML_App.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Borders.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
