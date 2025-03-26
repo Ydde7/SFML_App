@@ -135,10 +135,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Borders.cpp" />
+    <ClCompile Include="Inputs.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="SFML_App.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Borders.h" />
+    <ClInclude Include="Inputs.h" />
+    <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
