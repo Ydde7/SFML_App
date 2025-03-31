@@ -1,8 +1,10 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include <array>
 
-#include "Inputs.h"
+#include "Inputs.cpp"
 #include "Player.h"
+#include "PlayerData.h"
 
 
 using namespace sf;
@@ -11,21 +13,8 @@ using namespace std;
 // Default constructor:
 	// Uses a RectangleShape (100, 100) as a sprite with default speed of 0.25 located at the centre
 Player::Player(float win_w, float win_h) {
-	width_p = 100.f;
-	height_p = 100.f;
-	spd_x = 0.25;
-	spd_y = 0.25;
-	playerSprite = new RectangleShape({ width_p, height_p });
-
-	origin_p = { width_p / 2, height_p / 2 };
-	position_p = { win_w/2, win_h/2 }; // This is starting location at centre
-	
-	playerSprite->setOrigin(origin_p);
-	playerSprite->setPosition(position_p);
-
-	playerSprite->setFillColor(Color(125, 65, 150));
-	playerSprite->setOutlineThickness(5.f);
-	
+	data_p = PlayerData( win_w, win_h, 0.2, 0.2, 100.0, 100.0, new RectangleShape({100.f, 100.f}) );
+	cout << "Player added" << endl;
 }
 
 //Player::Player(sf::RectangleShape playerSprite, float width, float height, float spd_x, float spd_y) {
@@ -33,13 +22,47 @@ Player::Player(float win_w, float win_h) {
 //}
 //
 //
-//// Movement
-//void playerMovement() {
-//	cout << "WIP";
-//}
+// 
+
+
+
+// Movement: Moves the player around the screen using the WASD keys at the player's registered speed
+void Player::movement_p(float win_w, float win_h) {
+
+	// Movement:
+	sf::Vector2f coords = movement_gen(win_w, win_h, data_p.position_p[0], data_p.position_p[1], data_p.spd_x, data_p.spd_y);
+	data_p.position_p[0] = coords.x;
+	data_p.position_p[1] = coords.y;
+	data_p.playerSprite->setPosition(coords);
+}
 
 // Draws the player onto the window:
-void Player::DrawPlayer(RenderWindow& win) {
-	win.draw(*playerSprite);
+void Player::DrawPlayer(sf::RenderWindow& win) {
+	//updateHBox();
 
+	int count = 0;
+	count++;
+	if (count > 60) {
+		cout << "Player Drawn" << endl;
+		count = 0;
+	}
+
+	// Update height of window 
+	data_p.updateCoords_pd(win.getSize().x, win.getSize().y);
+
+	// Update player sprite values
+	data_p.playerSprite->setOrigin({ data_p.origin_p[0], data_p.origin_p[1] }); // For whensprite resizing is added
+	data_p.playerSprite->setPosition({ data_p.position_p[0], data_p.position_p[1] });
+
+	win.draw(*data_p.playerSprite);
+	
 }
+
+
+
+// Updates the area fo the player:
+//void Player::updateHBox() {
+//	hBox = playerSprite->getSize().x * playerSprite->getSize().y;
+//}
+
+

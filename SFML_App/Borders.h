@@ -18,7 +18,7 @@ struct Borders {
 	Borders();
 
 	// Methods
-	void realign(float win_w, float win_h);
+	void realign_b(float win_w, float win_h);
 
 	void drawBorder(sf::RenderWindow& win);
 

@@ -16,8 +16,8 @@ vector<RectangleShape*> rects;
 float win_w;
 float win_h;
 
-unsigned int initial_Width = 800;
-unsigned int initial_Height = 600;
+unsigned int initial_Width_w = 800;
+unsigned int initial_Height_w = 600;
 
 // Transformation details:
 float x = 0.f;
@@ -38,10 +38,10 @@ void static addRectangles(vector<RectangleShape*>& rects, int num, float width, 
 
 int main() {
 	// Create the window	
-	RenderWindow mainWindow(VideoMode({ initial_Width, initial_Height }), "My First App"); // Note VideoMode takes Unsigned ints
+	RenderWindow mainWindow(VideoMode({ initial_Width_w, initial_Height_w }), "My First App"); // Note VideoMode takes Unsigned ints
 	
 	// Create Game Objects
-	Player player = Player( initial_Width, initial_Height );
+	Player player = Player( initial_Width_w, initial_Height_w );
 
 	//RectangleShape myRectangle({ 400.f, 200.f }); // Creates a rectangle shape
 	addRectangles(rects, 1, 400.f, 200.f);
@@ -67,7 +67,6 @@ int main() {
 			//View view({400.f, 300.f}, Vector2f(mainWindow.getSize())); // Centers the rectangle (the floats are the rectangle's position)
 				mainWindow.setView(view);
 			}
-
 		}
 
 		// Window width and height:
@@ -75,6 +74,9 @@ int main() {
 		win_h = static_cast<float>(mainWindow.getSize().y);
 
 		//// Keyboard: NOTE: These are input types and NOT events!
+
+		player.movement_p(win_w, win_h);
+
 
 		// Fixes the Color error with resizing 
 		mainWindow.clear(Color(175, 175, 175)); // Make sure your capitalization is right!
@@ -86,7 +88,7 @@ int main() {
 		//rects[0]->setRotation(degrees(30.f));
 		rects[0]->setScale({ win_w / 1600.f, win_w / 1200.f });
 
-		borders.realign(win_w, win_h);
+		borders.realign_b(win_w, win_h);
 		borders.drawBorder(mainWindow);
 
 		/*for (unsigned int i = 0; i < rects.size(); i++) {

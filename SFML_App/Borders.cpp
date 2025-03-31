@@ -33,7 +33,7 @@ Borders::Borders() {
 // Methods:
 
 // Aligns the rectangles to the corners
-void Borders::realign(float win_w, float win_h) {
+void Borders::realign_b(float win_w, float win_h) {
 	topRight->setPosition({ win_w, 0.f });
 	bottomLeft->setPosition({ 0.f, win_h });
 	bottomRight->setPosition({ win_w, win_h });

@@ -22,6 +22,12 @@
     <Filter Include="Source Files\Obj\Controls">
       <UniqueIdentifier>{a4c4d064-6ada-429a-8961-0f2f245e8986}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\NewFilter1">
+      <UniqueIdentifier>{a8980723-c71e-4f0a-9e84-7a07bf6f69ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Obj\Player">
+      <UniqueIdentifier>{b0ed1d82-9b1a-40c3-b5d6-da31afc42c83}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SFML_App.cpp">
@@ -34,7 +40,10 @@
       <Filter>Source Files\Obj\Controls</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>Source Files\Obj</Filter>
+      <Filter>Source Files\Obj\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerData.cpp">
+      <Filter>Source Files\Obj\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -42,10 +51,10 @@
       <Filter>Source Files\Map</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>Source Files\Obj</Filter>
+      <Filter>Source Files\Obj\Player</Filter>
     </ClInclude>
-    <ClInclude Include="Inputs.h">
-      <Filter>Source Files\Obj\Controls</Filter>
+    <ClInclude Include="PlayerData.h">
+      <Filter>Source Files\Obj\Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

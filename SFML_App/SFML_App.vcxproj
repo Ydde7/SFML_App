@@ -137,11 +137,12 @@
     <ClCompile Include="Borders.cpp" />
     <ClCompile Include="Inputs.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerData.cpp" />
     <ClCompile Include="SFML_App.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Borders.h" />
-    <ClInclude Include="Inputs.h" />
+    <ClInclude Include="PlayerData.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
