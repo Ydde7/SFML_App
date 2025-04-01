@@ -30,7 +30,7 @@ Player::Player(float win_w, float win_h) {
 void Player::movement_p(float win_w, float win_h) {
 
 	// Movement:
-	sf::Vector2f coords = movement_gen(win_w, win_h, data_p.position_p[0], data_p.position_p[1], data_p.spd_x, data_p.spd_y);
+	sf::Vector2f coords = movement_gen(data_p);
 	data_p.position_p[0] = coords.x;
 	data_p.position_p[1] = coords.y;
 	data_p.playerSprite->setPosition(coords);
